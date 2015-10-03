@@ -252,7 +252,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 165864, guid: 126cad430eca3e94481374c20e385fb1, type: 2}
       propertyPath: m_Name
-      value: Jump_Platform (1)
+      value: Jump_Platform2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 126cad430eca3e94481374c20e385fb1, type: 2}
@@ -298,11 +298,84 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 165864, guid: 126cad430eca3e94481374c20e385fb1, type: 2}
       propertyPath: m_Name
-      value: Jump_Platform (3)
+      value: Jump_Platform4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 126cad430eca3e94481374c20e385fb1, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1449676334
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1449676338}
+  - 33: {fileID: 1449676337}
+  - 65: {fileID: 1449676336}
+  - 23: {fileID: 1449676335}
+  m_Layer: 0
+  m_Name: Enemy
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!23 &1449676335
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1449676334}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 1
+  m_ReflectionProbeUsage: 1
+  m_ProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 1
+  m_ImportantGI: 0
+  m_AutoUVMaxDistance: .5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+--- !u!65 &1449676336
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1449676334}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!33 &1449676337
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1449676334}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &1449676338
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1449676334}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 8, y: .676999986, z: 0}
+  m_LocalScale: {x: .300000012, y: .300000012, z: .200000003}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
 --- !u!1001 &1497494597
 Prefab:
   m_ObjectHideFlags: 0
@@ -344,7 +417,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 108416, guid: eccd9f83c05060642a525d22930990ad, type: 2}
       propertyPath: m_Name
-      value: Platform (1)
+      value: Platform2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: eccd9f83c05060642a525d22930990ad, type: 2}
@@ -492,7 +565,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 165864, guid: 126cad430eca3e94481374c20e385fb1, type: 2}
       propertyPath: m_Name
-      value: Jump_Platform (2)
+      value: Jump_Platform3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 126cad430eca3e94481374c20e385fb1, type: 2}
