@@ -8,7 +8,16 @@ public class PlayerControl : MonoBehaviour {
     Transform tagGround;
     Rigidbody2D myBody;
 
+	//End game flag
+	bool gameEndFlag = false;
+
     public bool isGrounded = false;
+
+	//Start position
+	private Vector3 startPoint = new Vector3(-1.5f,1.677f,0.0f);
+	
+	//End position
+	private float endPoint = 12.5f;
 
 	// Use this for initialization
 	void Start ()
@@ -30,6 +39,14 @@ public class PlayerControl : MonoBehaviour {
         }
 	}
     
+	void Update()
+	{
+		if (gameObject.transform.position.y < -10) {
+			outOfBonds ();
+		}
+		levelCompletition ();
+	}
+
     //Allows player to move
     public void Move(float horizontal_input)
     {
@@ -47,4 +64,16 @@ public class PlayerControl : MonoBehaviour {
         }
     }
 
+	public void outOfBonds()
+	{
+		gameObject.transform.position = startPoint;
+		myBody.velocity = new Vector2 (0.0f,0.0f);
+	}
+	
+	public void levelCompletition()
+	{
+		if (gameObject.transform.position.x == endPoint) {
+			gameEndFlag = true;
+		}
+	}
 }
