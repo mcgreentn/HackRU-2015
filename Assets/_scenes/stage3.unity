@@ -619,7 +619,9 @@ Prefab:
       propertyPath: m_RootOrder
 
 
+
       value: 42
+
 
 
       objectReference: {fileID: 0}
@@ -666,6 +668,7 @@ Prefab:
     - target: {fileID: 22475478, guid: f4283bbeada96344a9580c056df49616, type: 2}
       propertyPath: m_AnchoredPosition.x
 
+
       value: 118.5
       objectReference: {fileID: 0}
     - target: {fileID: 22475478, guid: f4283bbeada96344a9580c056df49616, type: 2}
@@ -683,6 +686,7 @@ Prefab:
     - target: {fileID: 22415458, guid: f4283bbeada96344a9580c056df49616, type: 2}
       propertyPath: m_AnchoredPosition.x
       value: 167
+
 
       objectReference: {fileID: 0}
     - target: {fileID: 11466090, guid: f4283bbeada96344a9580c056df49616, type: 2}
@@ -720,6 +724,7 @@ Prefab:
       objectReference: {fileID: 0}
 
 
+
     - target: {fileID: 22358266, guid: f4283bbeada96344a9580c056df49616, type: 2}
       propertyPath: m_RenderMode
       value: 1
@@ -741,6 +746,7 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f4283bbeada96344a9580c056df49616, type: 2}
   m_IsPrefabParent: 0
+
 
 --- !u!1001 &624285232
 Prefab:
@@ -830,6 +836,7 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cf329b113ddb67a45874b424e321abd0, type: 2}
   m_IsPrefabParent: 0
+
 --- !u!1 &716639088
 GameObject:
   m_ObjectHideFlags: 0
@@ -937,6 +944,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 38
+
 --- !u!1001 &760465109
 Prefab:
   m_ObjectHideFlags: 0
@@ -1249,6 +1257,7 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cdd75835347f6524ca2633a9874ba943, type: 2}
   m_IsPrefabParent: 0
+
 --- !u!1001 &1066613892
 Prefab:
   m_ObjectHideFlags: 0
@@ -1342,6 +1351,7 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9616d649122d268469f74af68f570068, type: 2}
   m_IsPrefabParent: 0
+
 --- !u!1 &1129492797
 GameObject:
   m_ObjectHideFlags: 0
@@ -1921,7 +1931,9 @@ Prefab:
     - target: {fileID: 11458328, guid: 21cb4c05cfdf6844daa5da9d01fc9abf, type: 2}
       propertyPath: target
       value: 
+
       objectReference: {fileID: 1826679520}
+
 
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 21cb4c05cfdf6844daa5da9d01fc9abf, type: 2}
