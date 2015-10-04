@@ -44,8 +44,9 @@ public class Enemy_Behaviour : MonoBehaviour {
 		{
 			//gameObject.transform.position = (gameObject.transform.position.x - 0.5f, enemyBody.transform.position.y, 
 			                               // enemyBody.transform.position.z);
-			gameObject.transform.position = new Vector3(gameObject.transform.position.x - 0.5f, gameObject.transform.position.y,
-			                                            gameObject.transform.position.z);
+			//gameObject.transform.position = new Vector3(gameObject.transform.position.x - 0.5f, gameObject.transform.position.y,
+			                                           // gameObject.transform.position.z);
+			this.gameObject.transform.position = direction;
 			//gameObject.transform.position.x = hit.gameObject.transform.position.y - 0.5f - enemyBox;
 			direction.x *= -1;
 
