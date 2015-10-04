@@ -12,6 +12,10 @@ public class PlayerControl : MonoBehaviour {
     public bool isGrounded = false;
     public bool isMobile = false;
 
+
+	//Music
+	public AudioClip[] audioClip;
+
 	//Start position
 	private Vector3 startPoint = new Vector3(-1.5f,1.677f,0.0f);
 
@@ -42,6 +46,7 @@ public class PlayerControl : MonoBehaviour {
         myBody = this.GetComponent<Rigidbody2D>();
         myTrans = transform;
         tagGround = GameObject.Find(this.name + "/tag_ground").transform;
+		PlaySound (0);
 	}
 	
 	
@@ -99,10 +104,12 @@ public class PlayerControl : MonoBehaviour {
 	{
         if (hit.gameObject.tag == "Enemy") {
 			if ((gameObject.transform.position.y > hit.gameObject.transform.position.y) || (honeyTimerFlag == true)) {
+				PlaySound (1);
 				hit.gameObject.SetActive (false);
 				Destroy (hit.gameObject);
 			} else {
 				gameObject.transform.position = startPoint;
+				PlaySound (1);
 			}
 
 		} else if (hit.gameObject.name.Equals ("ExitDoor")) {
@@ -176,6 +183,12 @@ public class PlayerControl : MonoBehaviour {
 	public void levelCompletition()
 	{
         Application.LoadLevel("stages");	       
+	}
+
+	void PlaySound(int clip)
+	{
+		GetComponent<AudioSource>().clip = audioClip[clip];
+		GetComponent<AudioSource>().Play();
 	}
 
 
