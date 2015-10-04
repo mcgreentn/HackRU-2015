@@ -21,10 +21,7 @@ public class ScoreScript : MonoBehaviour {
         base1.transform.position.Set(base1.transform.position.x + 1000, base1.transform.position.y, 0);
         title.transform.position.Set(title.transform.position.x, title.transform.position.y + 1000, 0);
 
-
-
-
-
+        WaitForSeconds(1.0);
 
     }
 
