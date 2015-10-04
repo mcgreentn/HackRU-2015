@@ -219,7 +219,8 @@ public class PlayerControl : MonoBehaviour {
 	void PlaySound(int clip)
 	{
 		GetComponent<AudioSource>().clip = audioClip[clip];
-		GetComponent<AudioSource>().Play();
+        GetComponent<AudioSource>().volume = 0.5f;
+        GetComponent<AudioSource>().Play();
 	}
 
 
@@ -244,5 +245,9 @@ public class PlayerControl : MonoBehaviour {
             ScoreScript.baseScore = 2000;
         }
         ScoreScript.timeScore = 750 * 1 / (Mathf.Round(timer));
+
+        //ScoreScript.collectScore = powerupCounter * 50;
+
+        //ScoreScript.coinScore = coinCounter * 5;
     }
 }
