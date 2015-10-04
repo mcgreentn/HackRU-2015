@@ -89,4 +89,15 @@ public class PlayerControl : MonoBehaviour {
 			gameEndFlag = true;
 		}
 	}
+
+	/*void OnCollisionEnter (Collision hit)
+	{
+		var tag = hit.gameObject.tag; 
+		if (tag == "Enemy") 
+		{
+			hit.collider.gameObject.SetActive (false);
+
+			
+		}*/
+	//}
 }
