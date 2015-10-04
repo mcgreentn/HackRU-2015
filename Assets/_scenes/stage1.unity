@@ -782,7 +782,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 17
 --- !u!1001 &1096707704
 Prefab:
   m_ObjectHideFlags: 0
@@ -820,7 +820,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 471630, guid: 996e3bbed0f17694cb86ded835cf1913, type: 2}
       propertyPath: m_RootOrder
-      value: 13
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8218680, guid: 996e3bbed0f17694cb86ded835cf1913, type: 2}
       propertyPath: m_Volume
@@ -1285,8 +1285,8 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 275, y: 290}
-  m_SizeDelta: {x: 550, y: 580}
+  m_AnchoredPosition: {x: 224, y: 140}
+  m_SizeDelta: {x: 448, y: 280}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &1542036078
 MonoBehaviour:

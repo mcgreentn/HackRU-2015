@@ -304,7 +304,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioClip:
-  - {fileID: 8300000, guid: 926c0ac6d1aedf240a9db1e6ebb23efe, type: 3}
+  - {fileID: 8300000, guid: eabcbb7b815ee7347a51ebc416cef901, type: 3}
 --- !u!114 &11465114
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -323,12 +323,15 @@ MonoBehaviour:
   jumpVelocity: 5
   isGrounded: 0
   isMobile: 0
+  timer: 0
   audioClip:
   - {fileID: 8300000, guid: 7be7bb7c52e85944bb00467c53eb4622, type: 3}
   - {fileID: 8300000, guid: 7202e322df78db2438f0a76972e0681d, type: 3}
   - {fileID: 8300000, guid: 6c65edc8df1cceb41983ac38c3ff5aba, type: 3}
   - {fileID: 8300000, guid: 01620b8a8b1998f4e8716dd53006136a, type: 3}
   endPoint: {x: 0, y: 0, z: 0}
+  coinCounter: 0
+  powerupCounter: 0
 --- !u!252 &25256314
 SurfaceEffector2D:
   m_ObjectHideFlags: 1
@@ -360,7 +363,7 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: audioClip.Array.data[0]
       value: 
-      objectReference: {fileID: 8300000, guid: 7be7bb7c52e85944bb00467c53eb4622, type: 3}
+      objectReference: {fileID: 8300000, guid: eabcbb7b815ee7347a51ebc416cef901, type: 3}
     - target: {fileID: 0}
       propertyPath: audioClip.Array.data[1]
       value: 
