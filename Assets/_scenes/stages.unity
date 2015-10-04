@@ -460,7 +460,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1021695521}
-        m_MethodName: stage1Pressed
+        m_MethodName: stage2Pressed
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
