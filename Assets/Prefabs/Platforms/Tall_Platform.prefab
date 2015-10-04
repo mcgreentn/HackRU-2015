@@ -12,7 +12,6 @@ GameObject:
   - 23: {fileID: 2390806}
   - 61: {fileID: 6120636}
   - 50: {fileID: 5057984}
-  - 114: {fileID: 11409376}
   m_Layer: 0
   m_Name: Tall_Platform
   m_TagString: Wall
@@ -92,17 +91,6 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Size: {x: .999999881, y: .999999881}
---- !u!114 &11409376
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 177938}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
