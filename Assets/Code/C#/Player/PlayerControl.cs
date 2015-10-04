@@ -85,9 +85,10 @@ public class PlayerControl : MonoBehaviour {
 	
 	public void levelCompletition()
 	{
-		if (gameObject.transform.position.x == endPoint) {
+		/*if (gameObject.transform.position.x == endPoint) {
 			gameEndFlag = true;
-		}
+		}*/
+        
 	}
 
 	/*void OnCollisionEnter (Collision hit)
