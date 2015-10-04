@@ -27,6 +27,8 @@ public class ScoreScript : MonoBehaviour {
     public Text coinsText;
     public Text totalText;
     public Text nextText;
+
+  //  public AudioSource boom;
     
     public static float timeScore;
     public static float collectScore;
@@ -35,8 +37,17 @@ public class ScoreScript : MonoBehaviour {
 
     public float speed = 200;
 
-	// Use this for initialization
-	void Start () {
+    float titleStop = Mathf.Round((float)(Screen.height - 40 * (Screen.height / 220.0)));
+    float baseStop = Mathf.Round((float)(Screen.width - 175 * (Screen.width / 220.0)));
+    float timeStop = Mathf.Round((float)((Screen.width - 150 * (Screen.width / 220.0))));
+    float collectStop = Mathf.Round((float)(Screen.width - 150 * (Screen.width / 220.0)));
+    float coinStop = Mathf.Round((float)(Screen.width - 150 * (Screen.width / 220.0)));
+    float nextStop = Mathf.Round((float)(Screen.width - 35 * (Screen.width / 220.0)));
+    float totalStop = Mathf.Round((float)(Screen.width - 175 * (Screen.width / 220.0)));
+
+    // AudioSource sourcer;
+    // Use this for initialization
+    void Start () {
         title.transform.position = new Vector3(title.transform.position.x, title.transform.position.y - Screen.height, 0);
         base1.transform.position = new Vector3(base1.transform.position.x - Screen.width, base1.transform.position.y, 0);
         time.transform.position = new Vector3(time.transform.position.x - Screen.width - 50, time.transform.position.y, 0);
@@ -59,22 +70,20 @@ public class ScoreScript : MonoBehaviour {
 
         timeText.text = "" + timeScore;
 
-        float val = Mathf.Round(Random.value * 50 + 140);
-        totals += val;
-        collectText.text = "" + val;
-        val = Mathf.Round(Random.value * 500 + 1000);
-        totals += val;
-        coinsText.text = "" + val;
+        collectText.text = "" + collectScore;
+        
+        coinsText.text = "" + coinScore;
 
+        totals = baseScore + timeScore + collectScore + coinScore;
         totalText.text = "" + totals;
-      
+
+       // sourcer = GetComponent<AudioSource>();
     }
 
 
     // Update is called once per frame
     void Update () {
 
-        print(base1.transform.position.x);
         checkTitle();
         checkBase();
         checkTime();
@@ -87,7 +96,7 @@ public class ScoreScript : MonoBehaviour {
 
     void checkTitle()
     {
-        if (title.transform.position.y < (Screen.height - 40.0 * (Screen.height/220.0) ))
+        if (title.transform.position.y < titleStop)
         {
             Vector2 moveVel = titleRB.velocity;
             moveVel.y = 20 * speed;
@@ -96,12 +105,12 @@ public class ScoreScript : MonoBehaviour {
         else
         {
             titleRB.velocity = new Vector2(0,0);
-
+          //  sourcer.Play();
         }
     }
     void checkBase()
     {
-        if (base1.transform.position.x < (Screen.width - 175 * (Screen.width / 220.0)))
+        if (base1.transform.position.x < baseStop)
         {
             Vector2 moveVel = base1RB.velocity;
             moveVel.x = 20 * speed;
@@ -110,13 +119,13 @@ public class ScoreScript : MonoBehaviour {
         else
         {
             base1RB.velocity = new Vector2(0, 0);
-
+           // sourcer.Play();
         }
     }
 
     void checkTime()
     {
-        if (time.transform.position.x < (Screen.width - 150 * (Screen.width / 220.0)))
+        if (time.transform.position.x < timeStop)
         {
             Vector2 moveVel = timeRB.velocity;
             moveVel.x = 20 * speed;
@@ -125,13 +134,13 @@ public class ScoreScript : MonoBehaviour {
         else
         {
             timeRB.velocity = new Vector2(0, 0);
-
+          //  sourcer.Play();
         }
     }
 
     void checkCollect()
     {
-        if (collect.transform.position.x < (Screen.width - 150 * (Screen.width / 220.0)))
+        if (collect.transform.position.x < collectStop)
         {
             Vector2 moveVel = collectRB.velocity;
             moveVel.x = 20 * speed;
@@ -140,12 +149,13 @@ public class ScoreScript : MonoBehaviour {
         else
         {
             collectRB.velocity = new Vector2(0, 0);
+           // sourcer.Play();
         }
     }
 
     void checkCoins()
     {
-        if (coins.transform.position.x < (Screen.width - 150 * (Screen.width / 220.0)))
+        if (coins.transform.position.x < coinStop)
         {
             Vector2 moveVel = coinsRB.velocity;
             moveVel.x = 20 * speed;
@@ -154,12 +164,13 @@ public class ScoreScript : MonoBehaviour {
         else
         {
             coinsRB.velocity = new Vector2(0, 0);
+         //   sourcer.Play();
         }
     }
 
     void checkTotal()
     {
-        if (total.transform.position.x < (Screen.width - 175 * (Screen.width / 220.0)))
+        if (total.transform.position.x < totalStop)
         {
             Vector2 moveVel = totalRB.velocity;
             moveVel.x = 20 * speed;
@@ -168,13 +179,13 @@ public class ScoreScript : MonoBehaviour {
         else
         {
             totalRB.velocity = new Vector2(0, 0);
-
+     //       sourcer.Play();
         }
     }
 
     void checkNext()
     {
-        if (next.transform.position.x > (Screen.width - 35 * (Screen.width / 220.0)))
+        if (next.transform.position.x > nextStop)
         {
             Vector2 moveVel = nextRB.velocity;
             moveVel.x = -1 * 20 * speed;
@@ -183,7 +194,7 @@ public class ScoreScript : MonoBehaviour {
         else
         {
             nextRB.velocity = new Vector2(0, 0);
-
+        //    sourcer.Play();
         }
     }
 }

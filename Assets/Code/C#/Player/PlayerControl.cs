@@ -244,10 +244,10 @@ public class PlayerControl : MonoBehaviour {
         {
             ScoreScript.baseScore = 2000;
         }
-        ScoreScript.timeScore = 750 * 1 / (Mathf.Round(timer));
+        ScoreScript.timeScore = Mathf.Round(750 * 1 / timer);
+        
+        ScoreScript.collectScore = powerupCounter * 50;
 
-        //ScoreScript.collectScore = powerupCounter * 50;
-
-        //ScoreScript.coinScore = coinCounter * 5;
+        ScoreScript.coinScore = coinCounter * 5;
     }
 }
