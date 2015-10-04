@@ -27,6 +27,11 @@ public class PlayerControl : MonoBehaviour {
 	private bool honeyTimerFlag = false;
 	private float honeyTimeCounter = 0.0f;
 
+	//Pill power up
+	private bool pillTimerFlag = false;
+	private float pillTimeCounter = 0.0f;
+	private float pillJump = 1.0f;
+
 	void Start ()
     {
         if (SystemInfo.deviceType == DeviceType.Handheld)
@@ -64,6 +69,7 @@ public class PlayerControl : MonoBehaviour {
 		}
 		waterEffect ();
 		honeyEffect ();
+		pillEffect ();
 	}
 
     //Allows player to move
@@ -79,7 +85,7 @@ public class PlayerControl : MonoBehaviour {
     {
         if (isGrounded)
         {
-            myBody.velocity += jumpVelocity * Vector2.up;
+            myBody.velocity += jumpVelocity * Vector2.up * pillJump;
         }
     }
 
@@ -92,29 +98,31 @@ public class PlayerControl : MonoBehaviour {
 	void OnCollisionEnter2D (Collision2D hit)
 	{
         if (hit.gameObject.tag == "Enemy") {
-			if (gameObject.transform.position.y > hit.gameObject.transform.position.y) {
+			if ((gameObject.transform.position.y > hit.gameObject.transform.position.y) || (honeyTimerFlag == true)) {
 				hit.gameObject.SetActive (false);
 				Destroy (hit.gameObject);
 			} else {
 				gameObject.transform.position = startPoint;
 			}
 
-		} else if (hit.gameObject.name.Equals ("ExitDoor")) 
-		{
+		} else if (hit.gameObject.name.Equals ("ExitDoor")) {
 			levelCompletition ();
-		} 
-		else if (hit.gameObject.tag == "Water") //touches water powerup
-		{
+		} else if (hit.gameObject.tag == "Water") { //touches water powerup
 			//activate timer and powerup effect
 			waterTimerFlag = true;
 			//destroys object
 			hit.gameObject.SetActive (false);
 			Destroy (hit.gameObject);
-		}
-		else if (hit.gameObject.tag == "Honey") //touches water powerup
-		{
+		} else if (hit.gameObject.tag == "Honey") { //touches water powerup
 			//activate timer and powerup effect
-			waterTimerFlag = true;
+			honeyTimerFlag = true;
+			//destroys object
+			hit.gameObject.SetActive (false);
+			Destroy (hit.gameObject);
+		} else if (hit.gameObject.tag == "Pill") {
+			//activate timer and powerup effect
+			pillTimerFlag = true;
+
 			//destroys object
 			hit.gameObject.SetActive (false);
 			Destroy (hit.gameObject);
@@ -147,11 +155,21 @@ public class PlayerControl : MonoBehaviour {
 		if (honeyTimeCounter >= 10f || honeyTimerFlag == false) {
 			honeyTimerFlag = false;
 			honeyTimeCounter = 0.0f;
-			//waterSpeed = 1.0f;
 		}
-		else
-		{
-			//waterSpeed = 2.5f;
+	}
+
+	void pillEffect()
+	{
+		if (pillTimerFlag == true)
+			pillTimeCounter += Time.deltaTime;
+
+		if (pillTimeCounter >= 10f || pillTimerFlag == false) {
+			pillTimerFlag = false;
+			pillTimeCounter = 0.0f;
+			pillJump = 1.0f;
+		} 
+		else {
+			pillJump = 2.5f;
 		}
 	}
 	
