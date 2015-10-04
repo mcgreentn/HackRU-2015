@@ -9,17 +9,14 @@ public class PlayerControl : MonoBehaviour {
     Transform tagGround;
     Rigidbody2D myBody;
 
-	//End game flag
-	bool gameEndFlag = false;
-
     public bool isGrounded = false;
     public bool isMobile = false;
 
 	//Start position
 	private Vector3 startPoint = new Vector3(-1.5f,1.677f,0.0f);
-	
-	//End position
-	private float endPoint = 12.5f;
+
+    //End position
+    public Vector3 endPoint;
 
 	void Start ()
     {
@@ -37,7 +34,6 @@ public class PlayerControl : MonoBehaviour {
 	void FixedUpdate ()
     {
         isGrounded = Physics2D.Linecast(myTrans.position, tagGround.position, playerMask);
-
         if (isMobile == false)
         {
             Move(Input.GetAxisRaw("Horizontal"));
@@ -55,9 +51,8 @@ public class PlayerControl : MonoBehaviour {
 	void Update()
 	{
 		if (gameObject.transform.position.y < -10) {
-			outOfBonds ();
+			outOfBounds ();
 		}
-		levelCompletition ();
 	}
 
     //Allows player to move
@@ -77,35 +72,36 @@ public class PlayerControl : MonoBehaviour {
         }
     }
 
-	public void outOfBonds()
+	public void outOfBounds()
 	{
 		gameObject.transform.position = startPoint;
 		myBody.velocity = new Vector2 (0.0f,0.0f);
 	}
 
 	void OnCollisionEnter2D (Collision2D hit)
-	{	
-		if (hit.gameObject.tag == "Enemy") 
-		{
-			if (gameObject.transform.position.y > hit.gameObject.transform.position.y)
-			{
-				hit.gameObject.SetActive (false);
-				Destroy (hit.gameObject);
-			}
-			else
-			{
-				gameObject.transform.position = startPoint;
-			}
-			
-		}
-	}
+	{
+        if (hit.gameObject.tag == "Enemy")
+        {
+            if (gameObject.transform.position.y > hit.gameObject.transform.position.y)
+            {
+                hit.gameObject.SetActive(false);
+                Destroy(hit.gameObject);
+            }
+            else
+            {
+                gameObject.transform.position = startPoint;
+            }
+
+        }
+        else if (hit.gameObject.name.Equals("ExitDoor"))
+        {
+            levelCompletition();
+        }
+    }
 	
 	public void levelCompletition()
 	{
-		/*if (gameObject.transform.position.x == endPoint) {
-			gameEndFlag = true;
-		}*/
-        
+        Application.LoadLevel("stages");	       
 	}
 
 	/*void OnCollisionEnter (Collision hit)
