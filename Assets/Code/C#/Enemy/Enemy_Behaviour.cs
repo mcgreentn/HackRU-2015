@@ -35,9 +35,5 @@ public class Enemy_Behaviour : MonoBehaviour {
 	}
 
 
-	void steppedOn()
-	{
-
-	}
 	
 }
