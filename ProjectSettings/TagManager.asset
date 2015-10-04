@@ -9,6 +9,7 @@ TagManager:
   - Water
   - Honey
   - Pill
+  - Coin
   layers:
   - Default
   - TransparentFX

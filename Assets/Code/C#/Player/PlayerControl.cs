@@ -25,6 +25,10 @@ public class PlayerControl : MonoBehaviour {
     //End position
     public Vector3 endPoint;
 
+	//Score counters
+	public int coinCounter = 0;
+	public int powerupCounter = 0;
+
 	//Water power up
 	private bool waterTimerFlag = false;
 	private float waterTimeCounter = 0.0f;
@@ -126,12 +130,20 @@ public class PlayerControl : MonoBehaviour {
 		} else if (hit.gameObject.tag == "Water") { //touches water powerup
 			//activate timer and powerup effect
 			waterTimerFlag = true;
+
+			//increase counter
+			powerupCounter++;
+
 			//destroys object
 			hit.gameObject.SetActive (false);
 			Destroy (hit.gameObject);
 		} else if (hit.gameObject.tag == "Honey") { //touches water powerup
 			//activate timer and powerup effect
 			honeyTimerFlag = true;
+
+			//increase counter
+			powerupCounter++;
+
 			//destroys object
 			hit.gameObject.SetActive (false);
 			Destroy (hit.gameObject);
@@ -139,9 +151,18 @@ public class PlayerControl : MonoBehaviour {
 			//activate timer and powerup effect
 			pillTimerFlag = true;
 
+			//increase counter
+			powerupCounter++;
+
 			//destroys object
 			hit.gameObject.SetActive (false);
 			Destroy (hit.gameObject);
+		} else if (hit.gameObject.tag == "Coin") {
+
+			coinCounter++;
+			hit.gameObject.SetActive (false);
+			Destroy (hit.gameObject);
+
 		}
 
     }
