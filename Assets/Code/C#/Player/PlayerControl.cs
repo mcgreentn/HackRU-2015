@@ -4,7 +4,7 @@ using UnityStandardAssets.CrossPlatformInput;
 
 public class PlayerControl : MonoBehaviour {
     public LayerMask playerMask;
-    public float speed = 10, jumpVelocity = 10;
+	public float speed = 10, jumpVelocity = 10; 
     Transform myTrans;
     Transform tagGround;
     Rigidbody2D myBody;
@@ -17,6 +17,15 @@ public class PlayerControl : MonoBehaviour {
 
     //End position
     public Vector3 endPoint;
+
+	//Water power up
+	private bool waterTimerFlag = false;
+	private float waterTimeCounter = 0.0f;
+	private float waterSpeed = 1;
+
+	//Honey power up
+	private bool honeyTimerFlag = false;
+	private float honeyTimeCounter = 0.0f;
 
 	void Start ()
     {
@@ -53,13 +62,15 @@ public class PlayerControl : MonoBehaviour {
 		if (gameObject.transform.position.y < -10) {
 			outOfBounds ();
 		}
+		waterEffect ();
+		honeyEffect ();
 	}
 
     //Allows player to move
     public void Move(float horizontal_input)
     {
         Vector2 moveVel = myBody.velocity;
-        moveVel.x = horizontal_input * speed;
+        moveVel.x = horizontal_input * speed * waterSpeed;
         myBody.velocity = moveVel;
     }
 
@@ -80,38 +91,75 @@ public class PlayerControl : MonoBehaviour {
 
 	void OnCollisionEnter2D (Collision2D hit)
 	{
-        if (hit.gameObject.tag == "Enemy")
-        {
-            if (gameObject.transform.position.y > hit.gameObject.transform.position.y)
-            {
-                hit.gameObject.SetActive(false);
-                Destroy(hit.gameObject);
-            }
-            else
-            {
-                gameObject.transform.position = startPoint;
-            }
+        if (hit.gameObject.tag == "Enemy") {
+			if (gameObject.transform.position.y > hit.gameObject.transform.position.y) {
+				hit.gameObject.SetActive (false);
+				Destroy (hit.gameObject);
+			} else {
+				gameObject.transform.position = startPoint;
+			}
 
-        }
-        else if (hit.gameObject.name.Equals("ExitDoor"))
-        {
-            levelCompletition();
-        }
+		} else if (hit.gameObject.name.Equals ("ExitDoor")) 
+		{
+			levelCompletition ();
+		} 
+		else if (hit.gameObject.tag == "Water") //touches water powerup
+		{
+			//activate timer and powerup effect
+			waterTimerFlag = true;
+			//destroys object
+			hit.gameObject.SetActive (false);
+			Destroy (hit.gameObject);
+		}
+		else if (hit.gameObject.tag == "Honey") //touches water powerup
+		{
+			//activate timer and powerup effect
+			waterTimerFlag = true;
+			//destroys object
+			hit.gameObject.SetActive (false);
+			Destroy (hit.gameObject);
+		}
+
     }
+
+
+	void waterEffect()
+	{
+		if (waterTimerFlag == true)
+			waterTimeCounter += Time.deltaTime;
+
+		if (waterTimeCounter >= 10f || waterTimerFlag == false) {
+			waterTimerFlag = false;
+			waterTimeCounter = 0.0f;
+			waterSpeed = 1.0f;
+		}
+		else
+		{
+			waterSpeed = 2.5f;
+		}
+	}
+
+	void honeyEffect()
+	{
+		if (honeyTimerFlag == true)
+			honeyTimeCounter += Time.deltaTime;
+		
+		if (honeyTimeCounter >= 10f || honeyTimerFlag == false) {
+			honeyTimerFlag = false;
+			honeyTimeCounter = 0.0f;
+			//waterSpeed = 1.0f;
+		}
+		else
+		{
+			//waterSpeed = 2.5f;
+		}
+	}
 	
 	public void levelCompletition()
 	{
         Application.LoadLevel("stages");	       
 	}
 
-	/*void OnCollisionEnter (Collision hit)
-	{
-		var tag = hit.gameObject.tag; 
-		if (tag == "Enemy") 
-		{
-			hit.collider.gameObject.SetActive (false);
 
-			
-		}*/
 	//}
 }

@@ -6,7 +6,8 @@ TagManager:
   tags:
   - Wall
   - Enemy
-  - PowerUp
+  - Water
+  - Honey
   layers:
   - Default
   - TransparentFX
