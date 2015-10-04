@@ -121,7 +121,7 @@ MonoBehaviour:
   m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 1280, y: 800}
+  m_ReferenceResolution: {x: 800, y: 600}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -496,11 +496,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 0}
       propertyPath: m_ReferenceResolution.x
-      value: 1280
+      value: 800
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_ReferenceResolution.y
-      value: 800
+      value: 600
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

@@ -19,4 +19,9 @@ public class ButtonClick : MonoBehaviour
     {
         Application.LoadLevel("stage2");
     }
+
+    public void stage3Pressed()
+    {
+        Application.LoadLevel("stage3");
+    }
 }
