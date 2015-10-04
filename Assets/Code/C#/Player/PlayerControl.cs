@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityStandardAssets.CrossPlatformInput;
 
 public class PlayerControl : MonoBehaviour {
     public LayerMask playerMask;
@@ -12,6 +13,7 @@ public class PlayerControl : MonoBehaviour {
 	bool gameEndFlag = false;
 
     public bool isGrounded = false;
+    public bool isMobile = false;
 
 	//Start position
 	private Vector3 startPoint = new Vector3(-1.5f,1.677f,0.0f);
@@ -19,9 +21,13 @@ public class PlayerControl : MonoBehaviour {
 	//End position
 	private float endPoint = 12.5f;
 
-	// Use this for initialization
 	void Start ()
     {
+        if (SystemInfo.deviceType == DeviceType.Handheld)
+        {
+            //we are on a desktop device, so don't use touch
+            isMobile = true;
+        }
         myBody = this.GetComponent<Rigidbody2D>();
         myTrans = transform;
         tagGround = GameObject.Find(this.name + "/tag_ground").transform;
@@ -32,10 +38,17 @@ public class PlayerControl : MonoBehaviour {
     {
         isGrounded = Physics2D.Linecast(myTrans.position, tagGround.position, playerMask);
 
-        Move(Input.GetAxisRaw("Horizontal"));
-        if(Input.GetButtonDown("Jump"))
+        if (isMobile == false)
         {
-            Jump();
+            Move(Input.GetAxisRaw("Horizontal"));
+            if (Input.GetButtonDown("Jump"))
+            {
+                Jump();
+            }
+        }
+        else
+        {
+            Move(CrossPlatformInputManager.GetAxis("Horizontal"));
         }
 	}
     
