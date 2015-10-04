@@ -12,6 +12,9 @@ public class PlayerControl : MonoBehaviour {
     public bool isGrounded = false;
     public bool isMobile = false;
 
+    //Timer
+    public float timer = 0;
+    bool isTiming = true;
 
 	//Music
 	public AudioClip[] audioClip;
@@ -76,7 +79,11 @@ public class PlayerControl : MonoBehaviour {
 		waterEffect ();
 		honeyEffect ();
 		pillEffect ();
-	}
+        if (isTiming)
+        {
+            timer += Time.deltaTime; //time.deltatime is the time between each frame, update is called once every frame.
+        }
+    }
 
     //Allows player to move
     public void Move(float horizontal_input)
@@ -184,7 +191,8 @@ public class PlayerControl : MonoBehaviour {
 	
 	public void levelCompletition()
 	{
-        Application.LoadLevel("stages");	       
+        Score();
+        Application.LoadLevel("scoring");	       
 	}
 
 	void PlaySound(int clip)
@@ -194,5 +202,26 @@ public class PlayerControl : MonoBehaviour {
 	}
 
 
-	//}
+	void Score()
+    {
+        isTiming = false;
+
+        if(Application.loadedLevelName == "stage1")
+        {
+            ScoreScript.baseScore = 500;
+        }
+        else if(Application.loadedLevelName == "stage2")
+        {
+            ScoreScript.baseScore = 1000;
+        }
+        else if(Application.loadedLevelName == "stage3")
+        {
+            ScoreScript.baseScore = 1500;
+        }
+        else if(Application.loadedLevelName == "stage4")
+        {
+            ScoreScript.baseScore = 2000;
+        }
+        ScoreScript.timeScore = 750 * 1 / (Mathf.Round(timer));
+    }
 }

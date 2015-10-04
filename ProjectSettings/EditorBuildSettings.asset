@@ -13,3 +13,9 @@ EditorBuildSettings:
     path: Assets/_scenes/stage1.unity
   - enabled: 1
     path: Assets/_scenes/stage2.unity
+  - enabled: 1
+    path: Assets/_scenes/stage3.unity
+  - enabled: 1
+    path: Assets/_scenes/stage4.unity
+  - enabled: 1
+    path: Assets/_scenes/scoring.unity

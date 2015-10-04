@@ -28,6 +28,11 @@ public class ScoreScript : MonoBehaviour {
     public Text totalText;
     public Text nextText;
     
+    public static float timeScore;
+    public static float collectScore;
+    public static float coinScore;
+    public static float baseScore;
+
     public float speed = 200;
 
 	// Use this for initialization
@@ -48,14 +53,13 @@ public class ScoreScript : MonoBehaviour {
         totalRB = total.GetComponent<Rigidbody2D>();
         nextRB = next.GetComponent<Rigidbody2D>();
 
-        float val = Mathf.Round(Random.value * 2000 + 1000);
         float totals = 0;
-        totals += val;
-        baseText.text = "" + val;
-        val = Mathf.Round(Random.value * 500 + 500);
-        totals += val;
-        timeText.text = "" + val;
-        val = Mathf.Round(Random.value * 50 + 140);
+
+        baseText.text = "" + baseScore;
+
+        timeText.text = "" + timeScore;
+
+        float val = Mathf.Round(Random.value * 50 + 140);
         totals += val;
         collectText.text = "" + val;
         val = Mathf.Round(Random.value * 500 + 1000);

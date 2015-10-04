@@ -12,7 +12,6 @@ GameObject:
   - 23: {fileID: 2394762}
   - 61: {fileID: 6196948}
   - 50: {fileID: 5084702}
-  - 114: {fileID: 11456208}
   m_Layer: 0
   m_Name: Jump_Platform
   m_TagString: Wall
@@ -92,17 +91,6 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Size: {x: .999999881, y: .999999881}
---- !u!114 &11456208
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 165864}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cf6a9e48ac01dbd469d2502397a76bcd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
