@@ -665,7 +665,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1092538570}
-        m_MethodName: stage1Pressed
+        m_MethodName: stage4Pressed
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1150,7 +1150,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1762451024}
-        m_MethodName: stage1Pressed
+        m_MethodName: stage5Pressed
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
