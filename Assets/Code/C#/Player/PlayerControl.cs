@@ -68,7 +68,9 @@ public class PlayerControl : MonoBehaviour {
     
 	void Update()
 	{
-		if (gameObject.transform.position.y < -10) {
+		if (gameObject.transform.position.y < -10) 
+		{
+			PlaySound(3);
 			outOfBounds ();
 		}
 		waterEffect ();
@@ -89,6 +91,7 @@ public class PlayerControl : MonoBehaviour {
     {
         if (isGrounded)
         {
+			PlaySound (1);
             myBody.velocity += jumpVelocity * Vector2.up * pillJump;
         }
     }
@@ -108,7 +111,7 @@ public class PlayerControl : MonoBehaviour {
 				Destroy (hit.gameObject);
 			} else {
 				gameObject.transform.position = startPoint;
-				PlaySound (0);
+				PlaySound (2);
 			}
 
 		} else if (hit.gameObject.name.Equals ("ExitDoor")) {
