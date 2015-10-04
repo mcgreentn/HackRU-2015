@@ -82,6 +82,23 @@ public class PlayerControl : MonoBehaviour {
 		gameObject.transform.position = startPoint;
 		myBody.velocity = new Vector2 (0.0f,0.0f);
 	}
+
+	void OnCollisionEnter2D (Collision2D hit)
+	{	
+		if (hit.gameObject.tag == "Enemy") 
+		{
+			if (gameObject.transform.position.y > hit.gameObject.transform.position.y)
+			{
+				hit.gameObject.SetActive (false);
+				Destroy (hit.gameObject);
+			}
+			else
+			{
+				gameObject.transform.position = startPoint;
+			}
+			
+		}
+	}
 	
 	public void levelCompletition()
 	{
