@@ -112,7 +112,6 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 657545160}
   - {fileID: 987798100}
   m_Father: {fileID: 1468876832}
   m_RootOrder: 0
@@ -179,11 +178,11 @@ RectTransform:
   m_GameObject: {fileID: 657545159}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: .200000003, y: .150000006, z: 1}
+  m_LocalScale: {x: .199999988, y: .149999991, z: 1}
   m_Children:
   - {fileID: 908041167}
-  m_Father: {fileID: 364668657}
-  m_RootOrder: 0
+  m_Father: {fileID: 1468876832}
+  m_RootOrder: 1
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 35}
@@ -328,7 +327,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: .310243428, b: .338235319, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -634,7 +633,7 @@ RectTransform:
   m_Children:
   - {fileID: 907062582}
   m_Father: {fileID: 364668657}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 138}
@@ -700,7 +699,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
 --- !u!114 &1201233448
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -902,7 +901,7 @@ RectTransform:
   m_Children:
   - {fileID: 1207280011}
   m_Father: {fileID: 1468876832}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_AnchorMin: {x: .525000036, y: .474690318}
   m_AnchorMax: {x: .525000036, y: .474690318}
   m_AnchoredPosition: {x: -19, y: -49}
@@ -1095,7 +1094,7 @@ RectTransform:
   m_Children:
   - {fileID: 1444927594}
   m_Father: {fileID: 1468876832}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
   m_AnchoredPosition: {x: 3, y: -153}
@@ -1269,6 +1268,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 364668657}
+  - {fileID: 657545160}
   - {fileID: 1453941547}
   - {fileID: 1370528293}
   m_Father: {fileID: 0}
