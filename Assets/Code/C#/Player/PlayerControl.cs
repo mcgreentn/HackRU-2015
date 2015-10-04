@@ -206,7 +206,7 @@ public class PlayerControl : MonoBehaviour {
 			pillJump = 1.0f;
 		} 
 		else {
-			pillJump = 2.5f;
+			pillJump = 2.0f;
 		}
 	}
 	
